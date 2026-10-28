@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Electric Vehicle Market Performance and Insights dashboard project.">
+<title>EV Insights | Electric Vehicle Market Performance</title>
+<style>
+:root{--bg:#0b0d10;--panel:#14181d;--text:#f4f6f8;--muted:#aeb8c4;--accent:#f5a900;--line:#2b333d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.6}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:10;background:rgba(11,13,16,.94);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{font-weight:800;letter-spacing:.4px}.brand span{color:var(--accent)}.navlinks{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.navlinks a{text-decoration:none;color:var(--muted);font-size:.92rem}.navlinks a:hover{color:var(--accent)}
+.btn{display:inline-block;border:1px solid var(--accent);border-radius:7px;padding:10px 15px;text-decoration:none;font-weight:700;font-size:.9rem}
+.btn.primary{background:var(--accent);color:#161616}.btn.secondary{color:var(--text)}
+.hero{max-width:1180px;margin:auto;padding:76px 22px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:42px;align-items:center}
+.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:.78rem}
+h1{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1.08;margin:15px 0 20px}.hero p{color:var(--muted);font-size:1.08rem;max-width:680px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.hero-card{background:radial-gradient(circle at top right,#303a44,#15191e 60%);border:1px solid var(--line);border-radius:18px;padding:28px;min-height:260px;display:flex;flex-direction:column;justify-content:center}
+.battery{font-size:4.2rem;margin-bottom:5px}.hero-card h2{margin:0 0 8px}.hero-card p{font-size:.96rem;margin:0}
+.section{max-width:1180px;margin:auto;padding:42px 22px}.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}
+h2{line-height:1.2}.section-head p{color:var(--muted);margin:6px 0 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:12px}
+.card .icon{color:var(--accent);font-size:1.5rem}.card h3{margin:8px 0}.card p{color:var(--muted);margin-bottom:0}
+.tableau-wrap{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--line);min-height:700px}
+.tableau-wrap iframe{display:block;width:100%;height:780px;border:0}.note{color:var(--muted);font-size:.9rem;margin-top:12px}
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.footer{border-top:1px solid var(--line);padding:24px 22px;color:var(--muted);text-align:center;font-size:.88rem}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}.cards,.method-grid{grid-template-columns:1fr}.section-head{display:block}.nav{align-items:flex-start;flex-direction:column}.navlinks{gap:13px}.tableau-wrap iframe{height:620px}}
+</style>
+</head>
+<body>
+<header class="topbar"><nav class="nav" aria-label="Main navigation">
+<div class="brand">EV <span>INSIGHTS</span></div>
+<div class="navlinks">
+<a href="#home">Home</a><a href="#about">About</a><a href="#features">Features</a><a href="#dashboard">Dashboard &amp; Story</a><a href="#methodology">Methodology</a>
+<a class="btn primary" href="{{ tableau_public_url }}" target="_blank" rel="noopener">Open on Tableau Public ↗</a>
+</div></nav></header>
+<main>
+<section class="hero" id="home"><div>
+<div class="eyebrow">Data Analytics Project</div>
+<h1>Electric Vehicle<br>Market Performance<br><span style="color:var(--accent)">&amp; Insights</span></h1>
+<p>Explore electric-vehicle market patterns through an interactive Tableau Story. This project brings together data preparation, visual analysis, dashboard design, and web integration in one accessible demonstration.</p>
+<div class="actions"><a class="btn primary" href="#dashboard">Explore the Story ↓</a><a class="btn secondary" href="#methodology">View Methodology</a></div>
+</div><aside class="hero-card"><div class="battery" aria-hidden="true">⚡</div><h2>Data to decisions</h2>
+<p>Explore sales trends, manufacturers, vehicle categories, battery technologies, range, pricing, and customer ratings through the published Tableau visualization.</p></aside></section>
+<section class="section" id="about"><div class="section-head"><div><div class="eyebrow">Project overview</div><h2>About this project</h2><p>An interactive overview of electric vehicle market performance.</p></div></div>
+<div class="cards">
+<article class="card"><div class="icon">⌕</div><h3>Objective</h3><p>Explore patterns in EV sales, manufacturers, vehicle categories, battery technologies, vehicle range, price, and customer ratings.</p></article>
+<article class="card"><div class="icon">▦</div><h3>Tools &amp; technologies</h3><p>Tableau Public for visual analytics, Python and Flask for the web application, and HTML/CSS for page structure and styling.</p></article>
+<article class="card" id="features"><div class="icon">↗</div><h3>Interactive exploration</h3><p>Use the embedded Tableau Story to navigate the published visualizations. Open it directly on Tableau Public if needed.</p></article>
+</div></section>
+<section class="section" id="dashboard"><div class="section-head"><div><div class="eyebrow">Explore the data</div><h2>Dashboard &amp; Tableau Story</h2><p>The published Tableau Story is embedded below.</p></div>
+<a class="btn secondary" href="{{ tableau_public_url }}" target="_blank" rel="noopener">Open full story ↗</a></div>
+<div class="tableau-wrap"><iframe src="{{ tableau_story_url }}" title="Electric Vehicle Market Performance Tableau Story" loading="lazy" allowfullscreen></iframe></div>
+<p class="note">If the visualization does not load inside this page, use “Open full story” to view it directly on Tableau Public. An internet connection is required.</p>
+</section>
+<section class="section" id="methodology"><div class="section-head"><div><div class="eyebrow">Project methodology</div><h2>From dataset to insights</h2><p>High-level workflow used for the project.</p></div></div>
+<div class="method-grid">
+<article class="card"><h3>1. Data preparation</h3><p>The supplied EV dataset was loaded into Tableau. Fields were reviewed and assigned appropriate dimensions and measures for analysis.</p></article>
+<article class="card"><h3>2. Visualization</h3><p>Visualizations were created to explore sales trends, manufacturers, categories, battery types, price versus range, and customer ratings.</p></article>
+<article class="card"><h3>3. Dashboard and story</h3><p>Related charts were assembled into a dashboard and organized into a Tableau Story for guided exploration.</p></article>
+<article class="card"><h3>4. Web integration</h3><p>Flask serves this page and embeds the publicly published Tableau Story so viewers can explore the analysis from a web application.</p></article>
+</div></section>
+</main>
+<footer class="footer">Electric Vehicle Market Performance &amp; Insights · Academic data analytics project</footer>
+</body></html>
